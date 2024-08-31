@@ -12,7 +12,7 @@ function showOtomatic() {
   sliderHero.style.transform = `translateX(-${index * 100}%)`;
 }
 
-setInterval(showOtomatic, 3000);
+setInterval(showOtomatic, 4000);
 
 // TOGGLE NAVBAR
 const navbar = document.querySelector(".navbar");
