@@ -1,24 +1,18 @@
 // HERO SLIDER
-let slideIndex = 1;
-showSlider(slideIndex);
-function plusSlider(n) {
-  showSlider((slideIndex += n));
+// OTOMATIS SLIDE
+const sliderHero = document.querySelector(".slider-hero");
+const sliderItem = document.querySelectorAll(".slide");
+let index = 0;
+
+function showOtomatic() {
+  index++;
+  if (index >= sliderItem.length) {
+    index = 0;
+  }
+  sliderHero.style.transform = `translateX(-${index * 100}%)`;
 }
 
-function showSlider(n) {
-  let i;
-  let slider = document.querySelectorAll(".slide");
-  if (n > slider.length) {
-    slideIndex = 1;
-  }
-  if (n < 1) {
-    slideIndex = slider.length;
-  }
-  for (i = 0; i < slider.length; i++) {
-    slider[i].style.display = "none";
-  }
-  slider[slideIndex - 1].style.display = "block";
-}
+setInterval(showOtomatic, 3000);
 
 // TOGGLE NAVBAR
 const navbar = document.querySelector(".navbar");
